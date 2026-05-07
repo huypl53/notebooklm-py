@@ -29,5 +29,7 @@ def test_wheel_includes_root_skill_content(tmp_path):
         packaged_skill = wheel.read("notebooklm/data/SKILL.md").decode("utf-8")
         packaged_codex = wheel.read("notebooklm/data/CODEX.md").decode("utf-8")
 
-    assert packaged_skill == (repo_root / "SKILL.md").read_text(encoding="utf-8")
+    assert packaged_skill == (repo_root / "skills" / "notebooklm" / "SKILL.md").read_text(
+        encoding="utf-8"
+    )
     assert packaged_codex == (repo_root / "AGENTS.md").read_text(encoding="utf-8")

@@ -81,13 +81,10 @@ replacement = '](https://github.com/teng-lin/notebooklm-py/blob/v$HFPR_VERSION/S
 pattern = '\]\(LICENSE\)'
 replacement = '](https://github.com/teng-lin/notebooklm-py/blob/v$HFPR_VERSION/LICENSE)'
 
-[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
-pattern = '\]\(SKILL\.md\)'
-replacement = '](https://github.com/teng-lin/notebooklm-py/blob/v$HFPR_VERSION/SKILL.md)'
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/notebooklm"]
-force-include = {"SKILL.md" = "notebooklm/data/SKILL.md", "skills/notebooklm-setup/SKILL.md" = "notebooklm/data/SETUP_SKILL.md", "AGENTS.md" = "notebooklm/data/CODEX.md"}
+force-include = {"skills/notebooklm/SKILL.md" = "notebooklm/data/SKILL.md", "skills/notebooklm-setup/SKILL.md" = "notebooklm/data/SETUP_SKILL.md", "AGENTS.md" = "notebooklm/data/CODEX.md"}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

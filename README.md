@@ -27,7 +27,7 @@
 
 ## What You Can Build
 
-🤖 **AI Agent Tools** - Integrate NotebookLM into Claude Code, Codex, and other LLM agents. Ships with a root [NotebookLM skill](SKILL.md) for GitHub and `npx skills add` discovery, local `notebooklm skill install` support for Claude Code and `.agents` skill directories, and repo-level Codex guidance in [`AGENTS.md`](AGENTS.md).
+🤖 **AI Agent Tools** - Integrate NotebookLM into Claude Code, Codex, and other LLM agents. Ships with a [NotebookLM skill](skills/notebooklm/SKILL.md) and a [setup skill](skills/notebooklm-setup/SKILL.md) for `npx skills add` discovery, local `notebooklm skill install` support for Claude Code and `.agents` skill directories, and repo-level Codex guidance in [`AGENTS.md`](AGENTS.md).
 
 📚 **Research Automation** - Bulk-import sources (URLs, PDFs, YouTube, Google Drive), run web/Drive research queries with auto-import, and extract insights programmatically. Build repeatable research pipelines.
 
@@ -229,7 +229,7 @@ Installs the skill into `~/.claude/skills/notebooklm` and `~/.agents/skills/note
 npx skills add huypl53/notebooklm-py
 ```
 
-Fetches the canonical [SKILL.md](SKILL.md) directly from GitHub.
+Fetches skills directly from GitHub — installs both the main [NotebookLM skill](skills/notebooklm/SKILL.md) and the [setup skill](skills/notebooklm-setup/SKILL.md).
 
 
 ## Documentation

@@ -9,7 +9,7 @@ AGENT_TEMPLATE_FILES = {
 }
 
 REPO_ROOT_AGENTS = Path(__file__).resolve().parents[3] / "AGENTS.md"
-REPO_ROOT_CLAUDE_SKILL = Path(__file__).resolve().parents[3] / "SKILL.md"
+REPO_ROOT_CLAUDE_SKILL = Path(__file__).resolve().parents[3] / "skills" / "notebooklm" / "SKILL.md"
 
 
 def _read_package_data(filename: str) -> str | None:
