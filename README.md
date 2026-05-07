@@ -8,12 +8,12 @@
 [![PyPI version](https://img.shields.io/pypi/v/notebooklm-py.svg)](https://pypi.org/project/notebooklm-py/)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue)](https://pypi.org/project/notebooklm-py/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml/badge.svg)](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml)
+[![Tests](https://github.com/huypl53/notebooklm-py/actions/workflows/test.yml/badge.svg)](https://github.com/huypl53/notebooklm-py/actions/workflows/test.yml)
 <p>
   <a href="https://trendshift.io/repositories/19116" target="_blank"><img src="https://trendshift.io/api/badge/repositories/19116" alt="teng-lin%2Fnotebooklm-py | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </p>
 
-**Source & Development**: <https://github.com/teng-lin/notebooklm-py>
+**Source & Development**: <https://github.com/huypl53/notebooklm-py>
 
 > **⚠️ Unofficial Library - Use at Your Own Risk**
 >
@@ -87,11 +87,15 @@ These features are available via API/CLI but not exposed in NotebookLM's web int
 ## Installation
 
 ```bash
-# Basic installation
+# Preferred — pipx installs into an isolated env, avoids system pip restrictions
+pipx install notebooklm-py
+
+# Alternative — pip
 pip install notebooklm-py
 
 # With browser login support (required for first-time setup)
-pip install "notebooklm-py[browser]"
+pipx install "notebooklm-py[browser]"
+# or: pip install "notebooklm-py[browser]"
 playwright install chromium
 ```
 
@@ -102,7 +106,7 @@ If `playwright install chromium` fails with `TypeError: onExit is not a function
 For contributors or testing unreleased features:
 
 ```bash
-pip install git+https://github.com/teng-lin/notebooklm-py@main
+pip install git+https://github.com/huypl53/notebooklm-py@main
 ```
 
 ⚠️ The main branch may contain unstable changes. Use PyPI releases for production.
@@ -203,7 +207,15 @@ asyncio.run(main())
 
 ### Agent Setup
 
-**Option 1 — CLI install**:
+**Option 1 — Auto-setup skill** (no package needed first — installs everything):
+
+```bash
+npx skills add huypl53/notebooklm-py --skill notebooklm-setup
+```
+
+Installs the [`notebooklm:setup`](skills/notebooklm-setup/SKILL.md) skill into your agent's skill directory. When invoked, the agent detects whether `notebooklm` is installed, runs `pipx install notebooklm-py` (falling back to `pip` if pipx is unavailable), and then runs `notebooklm skill install` automatically.
+
+**Option 2 — CLI install** (after package is installed):
 
 ```bash
 notebooklm skill install
@@ -211,10 +223,10 @@ notebooklm skill install
 
 Installs the skill into `~/.claude/skills/notebooklm` and `~/.agents/skills/notebooklm`.
 
-**Option 2 — `npx` install** (via the open skills ecosystem):
+**Option 3 — `npx` install** (via the open skills ecosystem):
 
 ```bash
-npx skills add teng-lin/notebooklm-py
+npx skills add huypl53/notebooklm-py
 ```
 
 Fetches the canonical [SKILL.md](SKILL.md) directly from GitHub.
